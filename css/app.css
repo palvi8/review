@@ -5,6 +5,11 @@ p{
     margin: 0;
 }
 .levler-app{
+    position:fixed;
+    width:0px;
+    height: 0px;
+    bottom:0px;
+    right:0px;
     z-index: 9999;
 }
 
@@ -247,7 +252,7 @@ width: 20%;
 padding-top:10px;
 }
 .levler-google-large{
-width:77%;
+width:100%;
 padding-left:10px;
 }
 .levler-google-small{
@@ -398,6 +403,7 @@ border-radius: 2px 2px 0px 0px;
    background-color:white;
     border-radius: 3px 3px 2px 2px;
     cursor: pointer;
+    width: 128px;;
 }
 @media(min-width: 990px) {
     .levler-lg-container{
@@ -446,7 +452,7 @@ border-radius: 2px 2px 0px 0px;
     border-radius:3% 3% 0% 0%;
     transform: translateY(20px);
    transition: all 0.5s;
-   margin-bottom:8%;
+   margin-bottom:12px;
    border-radius:10px;
    z-index:9998;
 }
