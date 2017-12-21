@@ -5,7 +5,7 @@ import './css/app.css';
 class App extends Component {
   render() {
     return (
-      <div className="levlerapp">
+      <div className="levler-app">
         <MobileBar />
         <DesktopBar />
       </div>

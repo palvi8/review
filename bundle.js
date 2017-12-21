@@ -23494,7 +23494,7 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'levlerapp' },
+        { className: 'levler-app' },
         _react2.default.createElement(_MobileBar2.default, null),
         _react2.default.createElement(_DesktopBar2.default, null)
       );
