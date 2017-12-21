@@ -5,12 +5,7 @@ p{
     margin: 0;
 }
 .levler-app{
-    position:fixed;
-    width:0px;
-    height: 0px;
-    bottom:0px;
-    right:0px;
-    z-index: 9999;
+   z-index:9999;
 }
 
 .closed {
@@ -26,6 +21,8 @@ bottom: 82px;
     box-shadow: 0 1px 2px rgba(0,0,0,.25);
     transition: opacity 375ms ease;
     cursor: pointer;
+    background-color:white;
+    z-index:9999;
 }
 
 .open { 
@@ -39,6 +36,8 @@ border-radius: 0px 4px 4px;
 box-shadow: 0 1px 2px rgba(0,0,0,.25);
 transition: opacity 375ms ease;
 cursor: pointer;
+background-color:white;
+z-index:9999;
 }
 
 .levler-bar-small-label {
@@ -99,14 +98,14 @@ cursor: pointer;
 .levler-left-bar-body{
     height: calc(100% - 40px);
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    z-index:9999;
 }
 
 .levler-left-bar-header {
     padding: 20px;
     text-align: center;
     border-bottom: 1px solid #eee;
-   background: #1aafaf;
    color:#fff;
 }
 
@@ -179,8 +178,13 @@ text-overflow: ellipsis;
     line-height: 25px;
 }
 
-.levler-lg-container{
+.levler-lg-container-right{
     display: none;   
+    
+}
+.levler-lg-container-left{
+    display: none;   
+    
 }
 .levler-left-icons{
 padding-right:10px;
@@ -280,12 +284,10 @@ cursor: pointer;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
     text-align:center;
     bottom:0;
-    right:10px;
+    right:12px;
     z-index:9998;
 }
-.mdclose{
-z-index:9998;
-}
+
 .levler-show-reviews-large-mdclose-left{
 cursor: pointer;
  padding: 13px 17px 15px 17px;
@@ -297,6 +299,7 @@ cursor: pointer;
     text-align:center;
     bottom:0;
     left:0;
+    z-index:9998;
 }
 .levler-bottom-bar-middle-content{
 opacity:0.8;
@@ -403,13 +406,33 @@ border-radius: 2px 2px 0px 0px;
    background-color:white;
     border-radius: 3px 3px 2px 2px;
     cursor: pointer;
-    width: 128px;;
+    width: 181px;
+}
+.button{
+    z-index:9999;
 }
 @media(min-width: 990px) {
-    .levler-lg-container{
-        display: block;
-    }
+    
 
+    .levler-lg-container-left{
+    display: block;   
+     position:fixed;
+    width:0px;
+    height: 0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index: 9999;
+}
+.levler-lg-container-right{
+    display: block;   
+     position:fixed;
+    width:0px;
+    height: 0px;
+    bottom:0px;
+    right:0px;
+    z-index: 9999;
+}
     .levler-sm-container{
         display: none;
     }
@@ -427,7 +450,8 @@ border-radius: 2px 2px 0px 0px;
    background-color:white;
     border-radius: 3px 3px 2px 2px;
     cursor: pointer;
-}
+    width: 181px;
+}   
 .levler-bar-large-label {
     float: left;
     font-weight: 600;
@@ -452,7 +476,7 @@ border-radius: 2px 2px 0px 0px;
     border-radius:3% 3% 0% 0%;
     transform: translateY(20px);
    transition: all 0.5s;
-   margin-bottom:12px;
+   margin-bottom:96px;
    border-radius:10px;
    z-index:9998;
 }
@@ -512,6 +536,17 @@ padding-right: 13px;
 .levler-social-image-small{
     width:72%;
     padding-top:7px;
+}
+@media only screen and (max-device-width: 768px){
+    .levler-sm-container{
+       display:block;
+       position:fixed;
+       width:0px;
+       height:0px;
+       bottom:0px;
+       left:0px;
+       z-index:9998;
+    }
 }
 @media only screen and (max-device-width: 480px){
     .levler-bottom-bar-body-small {

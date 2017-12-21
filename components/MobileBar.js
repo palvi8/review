@@ -168,12 +168,13 @@ class MobileBar extends Component {
         this.state = {show: false, data: {}}
     }
 
-    componentWillMount(){
+   componentWillMount(){
         var self = this;
+        var token=document.querySelector('script[data-id="levler-bar"],[data-value]').getAttribute('data-value');
         axios({
             method: "get",
             url: 'https://app.levler.co/api/v1/toolbar/reviews',
-            headers: {'authorization': '29ad6bf7ef2c6916c8c5513fb7109862'}
+            headers: {'authorization': token}
         }).then(function (response) {
           self.setState({data: response.data})
         }).catch(function (error) {

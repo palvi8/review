@@ -209,29 +209,34 @@ class DesktopBar extends Component {
     
         var levlerFloat ="";
         var barFloat="";
+        var containerFloat="";
         if(this.state.show){
             if(this.state.data.position === "Bottom-Right"){
                 levlerFloat = "levler-bottom-right show";
                 barFloat ="levler-bottom-right hide";
+                containerFloat="levler-lg-container-right show";
             }
             else if(this.state.data.position === "Bottom-Left"){
                 levlerFloat = "levler-bottom-left show";
                 barFloat ="levler-bottom-left hide";
+                containerFloat="levler-lg-container-left show";
             }
         } else {
             if(this.state.data.position === "Bottom-Right"){
                 levlerFloat = "levler-bottom-right hide";
                 barFloat ="levler-bottom-right show";
+                 containerFloat="levler-lg-container-right hide";
                 
             }
             else if(this.state.data.position === "Bottom-Left"){
                 levlerFloat = "levler-bottom-left hide";
                 barFloat ="levler-bottom-left show";
+                containerFloat="levler-lg-container-left hide";
             }
         }
         
         return(  
-            <div className="levler-lg-container">
+            <div className={containerFloat}>
                 <div  id="levler-show-reviews-large" className={ barFloat} onClick={ this.toggleReviews }>
                     <div className="levler-bar-border"  style={{"background":this.state.data.hexacode}}></div>
                         <div className="levler-left-col-small">
@@ -254,9 +259,9 @@ class DesktopBar extends Component {
             </div>
                 
                 </div>            
-                 <div id="mdclose" onClick={ this.toggleReviews } className={levlerFloat}>
+                 <div  onClick={ this.toggleReviews } className={levlerFloat}>
                       <div className={this.state.data.position === 'Bottom-Right'? "levler-show-reviews-large-mdclose-right":"levler-show-reviews-large-mdclose-left"} style={{"background":this.state.data.hexacode}}>
-                    <MdClose className='button' href='#' />
+                    <MdClose href='#' />
                 </div>
                      </div>
                 <div id="levler-bar-bottom" className= {levlerFloat}>
