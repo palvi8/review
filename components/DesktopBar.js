@@ -86,10 +86,6 @@ function Stars(props){
     }
 }
 
-function Avgstars(props){
-
-}
-
 function Icons(props){
     if(props.src === "Google"){
         return (
@@ -171,8 +167,7 @@ function ListItem(props){
      console.log(props.data.average);
      return(
          <div>
-          
-                    </div>
+    </div>
      );
  }
    
@@ -256,8 +251,7 @@ class DesktopBar extends Component {
 
                         </div>
                 <div className="levler-timestamp-review">{ this.state.data.No_of_reviews } reviews</div>
-            </div>
-                
+                  </div>
                 </div>            
                  <div  onClick={ this.toggleReviews } className={levlerFloat}>
                       <div className={this.state.data.position === 'Bottom-Right'? "levler-show-reviews-large-mdclose-right":"levler-show-reviews-large-mdclose-left"} style={{"background":this.state.data.hexacode}}>
