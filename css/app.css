@@ -8,7 +8,7 @@ p{
    z-index:9999;
 }
 
-.closed {
+   .closed {
     color:#fff;
     position: absolute;
    width: 58px;
@@ -23,20 +23,19 @@ p{
     background-color:white;
     z-index:9999;
 }
-
 .open { 
 color: #fff;
 position: absolute;
 width: 26px;
 height: 53px;
 bottom: 40px;
-left: calc(100% - 49px);
 border-radius: 0px 4px 4px;
-box-shadow: 0 1px 2px rgba(0,0,0,.25);
+box-shadow: 0 6px 8px rgba(0,0,0,.25);
 transition: opacity 375ms ease;
 cursor: pointer;
-background-color:white;
-z-index:9999;
+background-color: white;
+margin-left: 292px;
+z-index: 9999;
 }
 
 .levler-bar-small-label {
@@ -85,13 +84,14 @@ z-index:9999;
 }
 
 #levler-bar-left {
-    z-index: 999999;
-    background: #fff;
-    height: 100vH;
-    width: calc(100% - 44px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.25);
-    border: 0;
-    overflow: hidden;
+  height: calc(100% - 14px);
+overflow: hidden;
+position: fixed;
+z-index: 9998;
+top: 0px;
+width: 291px;
+box-shadow: 0 5px 10px rgb(0,0,0,.25);
+
 }
 
 .levler-left-bar-body{
@@ -119,17 +119,20 @@ z-index:9999;
 }
 
 .levler-left-bar-footer{
-    height: 40px;
+    height: 33px;
     padding: 10px;
     bottom: 0;
     border-top: 1px solid #eee;
+    position: fixed;
+    left: 0px;
+    width: 260px;
 }
 
 .levler-left-bar-footer-label {
-    float: right;
-    font-size: 13px;
+ float: left;
     color: #777777;
-    font-weight:600;
+    font-weight: 600;
+    font-size: 11px;
 }
 
 .levler-left-bar-review {
@@ -377,8 +380,8 @@ height: 450px;
 width: 100%;
 }
 .levler-social-image-small{
-    width:100%;
-    padding-top:7px;
+       width: 99%;
+    padding-top: 7px;
 }
 
 .levler-bottom-bar-body{
@@ -404,6 +407,7 @@ border-radius: 2px 2px 0px 0px;
 .button{
     z-index:9999;
 }
+
 @media(min-width: 990px) {
     
 
@@ -430,8 +434,7 @@ border-radius: 2px 2px 0px 0px;
         display: none;
     }
 }
-.levler-bar-large{
-   
+.levler-bar-large{  
     position: absolute;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
     margin-bottom: 10px;
@@ -476,7 +479,7 @@ border-radius: 2px 2px 0px 0px;
 .levler-bottom-bar-body-small {
     overflow: auto;
     background: #fff;
-     height: calc(100% - 70px);
+     height: calc(100% - 81px);
     width: 100%;
 }
 
@@ -493,7 +496,7 @@ padding-right: 10px;
 
 .levler-bar-large-label-name {
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.1em;
     white-space: nowrap;
     margin-bottom: 4px;
@@ -526,7 +529,7 @@ padding-right: 13px;
     font-weight:600;
 }
 .levler-social-image-small{
-    width:72%;
+    width:99%;
     padding-top:7px;
 }
 @media only screen and (max-device-width: 768px){
@@ -539,6 +542,7 @@ padding-right: 13px;
        left:0px;
        z-index:9998;
     }
+ 
 }
 @media only screen and (max-device-width: 480px){
     .levler-bottom-bar-body-small {
@@ -548,49 +552,46 @@ padding-right: 13px;
     width: 100%;
 }
 .levler-bar-large-label-name {
-    color: #fff;
-    font-size: 20px;
+   color: #fff;
+    font-size: 16px;
     line-height: 1.1em;
     white-space: nowrap;
     margin-bottom: 4px;
-    padding-left: 16px;
-padding-right: 13px;
+    padding-left: 23px;
+    padding-right: 13px;
 }
-
 }
 @media only screen and (max-device-width: 414px){
 .levler-bottom-bar-body-small {
-    overflow: auto;
+      overflow: auto;
     background: #fff;
-    height: calc(100% - 70px);
+    height: calc(100% - 81px);
     width: 100%;
 }
 .levler-bar-large-label-name {
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.1em;
     white-space: nowrap;
     margin-bottom: 4px;
     padding-left: 16px;
 padding-right: 13px;
 }
-
 }
 @media only screen and (max-device-width: 360px){
     .levler-bottom-bar-body-small {
     overflow: auto;
     background: #fff;
-    height: calc(100% - 70px);
+    height: calc(100% - 81px);
     width: 100%;
 }
 .levler-bar-large-label-name {
     color: #fff;
-    font-size: 20px;
-    line-height: 1.1em;
-    white-space: nowrap;
-    margin-bottom: 4px;
-    padding-left: 16px;
+font-size: 16px;
+line-height: 1.1em;
+white-space: nowrap;
+margin-bottom: 4px;
+padding-left: 16px;
 padding-right: 13px;
 }
-
 }

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import FaStar from 'react-icons/lib/fa/star';
 import FaStarHalfEmpty from 'react-icons/lib/fa/star-half-empty';
 import FaMinus from 'react-icons/lib/fa/minus';
-import MdAdd from 'react-icons/lib/md/add';
-import MdClose from 'react-icons/lib/md/close';
 import Timestamp from 'react-timestamp';
 import axios from 'axios';
 
