@@ -126,6 +126,7 @@ box-shadow: 0 5px 10px rgb(0,0,0,.25);
     position: fixed;
     left: 0px;
     width: 260px;
+    background: white;
 }
 
 .levler-left-bar-footer-label {
@@ -133,6 +134,8 @@ box-shadow: 0 5px 10px rgb(0,0,0,.25);
     color: #777777;
     font-weight: 600;
     font-size: 11px;
+    background:white;
+    
 }
 
 .levler-left-bar-review {
@@ -409,8 +412,6 @@ border-radius: 2px 2px 0px 0px;
 }
 
 @media(min-width: 990px) {
-    
-
     .levler-lg-container-left{
     display: block;   
      position:fixed;
@@ -460,7 +461,6 @@ border-radius: 2px 2px 0px 0px;
     color: #333;
     line-height: 24px;
     font-size:19px;
-
 }
 
 #levler-bar-bottom{
@@ -579,14 +579,14 @@ padding-right: 13px;
 }
 }
 @media only screen and (max-device-width: 360px){
-    .levler-bottom-bar-body-small {
-    overflow: auto;
-    background: #fff;
-    height: calc(100% - 81px);
-    width: 100%;
+.levler-bottom-bar-body-small {
+overflow: auto;
+background: #fff;
+height: calc(100% - 81px);
+width: 100%;
 }
 .levler-bar-large-label-name {
-    color: #fff;
+color: #fff;
 font-size: 16px;
 line-height: 1.1em;
 white-space: nowrap;
