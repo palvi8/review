@@ -139,6 +139,7 @@ box-shadow: 0 5px 13px rgb(0,0,0,.25);
     font-weight: 600;
     font-size: 11px;
     background:white;
+    font-style:italic;
 
 }
 
@@ -532,15 +533,13 @@ padding-right: 13px;
     padding-bottom:10px;
     font-weight:600;
     text-decoration: none;
+    font-style: italic;
 }
 .levler-social-image-small{
     width:99%;
     padding-top:7px;
 }
-.copyright{
-color:#777777 !important;
-text-decoration: none;
-}
+
 
 @media only screen and (max-device-width: 768px){
     .levler-sm-container{
