@@ -171,11 +171,14 @@ function ListItem(props){
      );
  }
    
+
+
 class DesktopBar extends Component {
     constructor(props){
         super(props);
         this.toggleReviews = this.toggleReviews.bind(this);
         this.state = {show: false, data: {}}
+    
     }
     
     toggleReviews() {
@@ -185,7 +188,8 @@ class DesktopBar extends Component {
             this.setState({show: true})
         }
     }
-
+  
+   
     componentWillMount(){
         var self = this;
         var token=document.querySelector('script[data-id="levler-bar"],[data-value]').getAttribute('data-value');
@@ -202,6 +206,7 @@ class DesktopBar extends Component {
 
     render(){
     
+   
         var levlerFloat ="";
         var barFloat="";
         var containerFloat="";
@@ -229,7 +234,7 @@ class DesktopBar extends Component {
                 containerFloat="levler-lg-container-left hide";
             }
         }
-        
+   
         return(  
             <div className={containerFloat}>
                 <div  id="levler-show-reviews-large" className={ barFloat} onClick={ this.toggleReviews }>
@@ -278,7 +283,13 @@ class DesktopBar extends Component {
                         </Button>
                     </div>
                     <div className="levler-bottom-bar-footer">
-                    <div className="levler-bottom-bar-footer-label">Powered by Levler</div>
+                    <div className="levler-bottom-bar-footer-label">    
+                        <i>
+                            <a href="http://levler.co/" style={{textDecoration :'none',color:'#777777'}}>
+                               <span> Powered by Levler</span>
+                            </a>
+                        </i>
+                        </div>
                     </div> 
                 </div>
             </div>

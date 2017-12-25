@@ -219,7 +219,13 @@ class MobileBar extends Component {
                         </div>
                     </div>
                     <div className="levler-left-bar-footer">
-                        <p className="levler-left-bar-footer-label">Powered by Levler</p>
+                        <p className="levler-left-bar-footer-label">
+                            <i>
+                                <a href="http://levler.co/" style={{textDecoration :'none',color:'#777777'}}>
+                                <span> Powered by Levler</span>
+                                </a>
+                            </i>
+                        </p>
                     </div>
                 </div>
             </div>
