@@ -69,17 +69,52 @@ border-radius: 0px 2px 2px 0px;
 }
 
 .hide {
-    transition: opacity 375ms ease;
     display: none;
+    
 }
-
 .show {
-    transition: opacity 375ms ease;
     display: block;
+    
+}
+.transition{
+  transition: opacity 1.5s ease-in;  
+}
+.appearTransition-appear{
+    
+    transform: translateY(80px);
+}
+.appearTransition-appear.appearTransition-appear-active{
+    
+    transform: translateY(0px);
+    transition: all 1s ease-out
+}
+.appearTransition-enter {
+  opacity: 0.01;
 }
 
+.appearTransition-enter.appearTransition-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.appearTransition-leave {
+  opacity: 1;
+}
+
+.appearTransition-leave.appearTransition-leave-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
+}
+.levler-reviewbar-up{ 
+transform: translatey(-5px);  
+transition:  0.6s ease-in-out;
+}
+.levler-reviewbar-down{
+     
+   transform: translatey(200px);  
+ transition:  0.6s ease-in-out;
+}
 #levler-minus {
-  
  width: 100%;
     margin-top: calc(100% - 14px);
     margin-bottom: calc(100% - 15px);
@@ -190,11 +225,9 @@ text-overflow: ellipsis;
 
 .levler-lg-container-right{
     display: none;   
-    
 }
 .levler-lg-container-left{
     display: none;   
-    
 }
 .levler-left-icons{
 padding-right:10px;
@@ -415,6 +448,27 @@ border-radius: 2px 2px 0px 0px;
 .button{
     z-index:9999;
 }
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    opacity: 1;
+    transition: opacity 5000ms ease-out;
+}
+.fade-leave{
+    opacity:1;
+}
+.fade-leave-active{
+    opacity: 0;
+    transition: opacity 5000ms ease-out;
+}
+.fade-appear{
+    opacity: 0;
+}
+.fade-appear-active{
+    opacity: 1;
+    transition: opacity 8000ms ease-out;
+}
 
 @media(min-width: 990px) {
     .levler-lg-container-left{
@@ -475,10 +529,11 @@ border-radius: 2px 2px 0px 0px;
     overflow: hidden;
     box-shadow: 0 1px 2px rgba(0,0,0,.25);
     border-radius:3% 3% 0% 0%;
-    transition: opacity 375ms ease;
-   margin-bottom:96px;
-   border-radius:10px;
-   z-index:9998;
+    margin-bottom:96px;
+    border-radius:10px;
+    z-index:9998;
+   animation: shimmy 1s infinite;
+  animation-direction: alternate;
 }
 
 .levler-bottom-bar-body-small {

@@ -81,7 +81,6 @@ function Stars(props){
     }
 }
 
-
 function Icons(props){
     if(props.src === "Google"){
         return (
@@ -205,6 +204,7 @@ class MobileBar extends Component {
                         <FaMinus size={30} id="levler-minus"/>
                     </div>
                 </div>
+                
                 <div id="levler-bar-left" className={ this.state.show ? 'show':'hide'}>
                     <div className="levler-left-bar-body">
                         <div className="levler-left-bar-header" style={{"background":this.state.data.hexacode}}>
