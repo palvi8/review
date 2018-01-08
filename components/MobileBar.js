@@ -4,6 +4,9 @@ import FaStarHalfEmpty from 'react-icons/lib/fa/star-half-empty';
 import FaMinus from 'react-icons/lib/fa/minus';
 import Timestamp from 'react-timestamp';
 import axios from 'axios';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {Motion, spring} from 'react-motion';
+import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
 
 function Stars(props){
    if(props.rating <= 1){
@@ -186,12 +189,11 @@ class MobileBar extends Component {
             this.setState({show: true})
         }
     }
-
     render(){
         return (
             <div className="levler-sm-container">
                 <div id="levler-bar-small" className={this.state.show ? 'open':'closed'} onClick={ this.toggleReviews } >
-                    <div id="levler-show-reviews-small" className={ this.state.show ? 'hide':'show'}>
+                    <Zoom><div id="levler-show-reviews-small" className={ this.state.show ? 'hide':'show'}>
                         <div className="levler-bar-border" style={{"background":this.state.data.hexacode}}></div>
                         <div className="levler-bar-small-label levler-bar-small-label-rating">
                             <img src={'https://app.levler.co/images/search.png'} alt="google" className="levler-google-small"/>
@@ -202,18 +204,21 @@ class MobileBar extends Component {
                     </div>
                     <div id="levler-hide-reviews-small" className={ this.state.show ? 'show':'hide'} style={{"background":this.state.data.hexacode}}>
                         <FaMinus size={30} id="levler-minus"/>
-                    </div>
+                    </div></Zoom>
                 </div>
                 
                 <div id="levler-bar-left" className={ this.state.show ? 'show':'hide'}>
                     <div className="levler-left-bar-body">
-                        <div className="levler-left-bar-header" style={{"background":this.state.data.hexacode}}>
-                             <span className="levler-bottom-bar-close"></span>
+                        <Zoom duration={2000}><div className="levler-left-bar-header" style={{"background":this.state.data.hexacode}}>
+                           <span className="levler-bottom-bar-close"></span>
                         <div className="levler-bar-large-label-name">{ this.state.data.team }</div>
                         <div>
                         <Stars size="12" rating={Number.parseInt(this.state.data.average_rating)} />
                         </div>
+                        
                         </div>
+                        </Zoom>      
+
                         <div className="levler-bottom-bar-body-small">
                             <ListItems data={this.state.data} />
                         </div>

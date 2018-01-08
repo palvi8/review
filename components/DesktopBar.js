@@ -10,6 +10,9 @@ import FaExternalLink from 'react-icons/lib/fa/external-link';
 import axios from 'axios';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Motion, spring} from 'react-motion';
+import { Fade, Flip, Rotate, Zoom } from 'react-reveal';
+
+
 function Stars(props){
 
     if(props.rating <= 1){
@@ -141,7 +144,8 @@ function ListItems(props) {
 }
 function ListItem(props){
     return(
-        <div className="levler-left-bar-review">
+      
+       <div className="levler-left-bar-review">
             <div className="levler-left-col">
                 <span ><Icons src={props.data.src} class="levler-social-image"/></span>
             </div>
@@ -235,44 +239,46 @@ class DesktopBar extends Component {
         }
         var reviewbar="";
         if(this.state.show){
-            reviewbar="levler-reviewbar-up show";
+            reviewbar="levlerbar-open";
         }
         else{
-            reviewbar="levler-reviewbar-down hide";
+            reviewbar="levlerbar-loaded";
         }
-        var k = <div id="levler-bar-bottom" className= {levlerFloat}>
-                  
-                    <div className="levler-bottom-bar-header" style={{"background":this.state.data.hexacode}}>
+        var k = <div id="levler-bar-bottom" className= {levlerFloat} style={{overflow:'hidden'}}>
+                   <Fade bottom style={{borderradius:'50%'}}> <div className="levler-bottom-bar-header" style={{"background":this.state.data.hexacode}}>
                         <span className="levler-bottom-bar-close"></span>
                         <div className="levler-bar-large-label-name">{ this.state.data.team }</div>
                         <Stars size="12" rating={Number.parseInt(this.state.data.average_rating)} />
                         <div className="levler-bottom-bar-header-content">Content Content Content Content Content Content</div>
                     </div>
-                    <div className="levler-bottom-bar-middle">
+                
+                      <div className="levler-bottom-bar-middle">  
                         <span className="levler-bottom-bar-middle-content">Content Content Content</span>
                     </div>
+                   
                     <div className="levler-bottom-bar-body">
-                        <ListItems data={this.state.data} />
+                        <Fade bottom duration={500}><ListItems data={this.state.data} /></Fade>
                       </div>
+                            
                     <div className="levler-bottom-bar-footer-top">
                         <Button className="levler-footer-top-button">
                            <span> <span className="levler-external-link"><FaExternalLink /></span>New Conversation</span>
                         </Button>
                     </div>
-                    <div className="levler-bottom-bar-footer">
-                        <div className="levler-bottom-bar-footer-label">    
+                   <div className="levler-bottom-bar-footer">
+                      <div className="levler-bottom-bar-footer-label">    
                            <i>
                                <a href="http://levler.co/" style={{textDecoration :'none',color:'#777777'}}>
-                                  <span> Powered by Levler</span>
+                                 <Zoom duration={1000}><span> Powered by Levler</span></Zoom>
                               </a>
                            </i>
                         </div>
+                    </div></Fade>
                     </div>
-                    </div>
-
+                    
         return(  
             <div className={containerFloat}>
-                <div  id="levler-show-reviews-large" className={ barFloat} onClick={ this.toggleReviews}>
+                <Zoom duration={1000}><div  id="levler-show-reviews-large" className={barFloat} onClick={ this.toggleReviews }>
                     <div className="levler-bar-border"  style={{"background":this.state.data.hexacode}}></div>
                         <div className="levler-left-col-small">
                            <img src={'https://app.levler.co/images/search.png'} alt="google" className="levler-google-large"/>
@@ -291,20 +297,15 @@ class DesktopBar extends Component {
                         </div>
                 <div className="levler-timestamp-review">{ this.state.data.No_of_reviews } reviews</div>
                 </div>
-                </div>            
+                </div>
+                </Zoom>     
                  <div onClick={ this.toggleReviews } className={levlerFloat}>
-                      <div className={this.state.data.position === 'Bottom-Right'? "levler-show-reviews-large-mdclose-right":"levler-show-reviews-large-mdclose-left"} style={{"background":this.state.data.hexacode}}>
+                     <Zoom duration={1000}><div className={this.state.data.position === 'Bottom-Right'? "levler-show-reviews-large-mdclose-right":"levler-show-reviews-large-mdclose-left"} style={{"background":this.state.data.hexacode}}>
                     <FaClose href='#' />
+                </div></Zoom>
                 </div>
+                <Zoom duration={1000}>{k}</Zoom>
                 </div>
-                 <ReactCSSTransitionGroup transitionName="appearTransition" 
-                 transitionAppear={true}
-                 transitionAppearTimeout={1000}
-                 transitionEnterTimeout={false}
-                 transitionLeaveTimeout={false}
-                 >{k}</ReactCSSTransitionGroup>    
-                </div>
-            
         );
     }
 }
