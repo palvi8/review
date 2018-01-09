@@ -213,99 +213,106 @@ class DesktopBar extends Component {
         var levlerFloat ="";
         var barFloat="";
         var containerFloat="";
+        var xcrossFloat="";
         if(this.state.show){
             if(this.state.data.position === "Bottom-Right"){
-                levlerFloat = "levler-bottom-right show";
-                barFloat ="levler-bottom-right hide";
+                levlerFloat = "levler-bottom-right showstate";
+                barFloat ="levler-bottom-right initialstate";
                 containerFloat="levler-lg-container-right show";
             }
             else if(this.state.data.position === "Bottom-Left"){
-                levlerFloat = "levler-bottom-left show";
-                barFloat ="levler-bottom-left hide";
+                levlerFloat = "levler-bottom-left showstate";
+                barFloat ="levler-bottom-left initialstate ";
                 containerFloat="levler-lg-container-left show";
             }
         } else {
             if(this.state.data.position === "Bottom-Right"){
-                levlerFloat = "levler-bottom-right hide";
-                barFloat ="levler-bottom-right show";
-                 containerFloat="levler-lg-container-right hide";
-                
+                levlerFloat = "levler-bottom-right show initialstate ";
+                barFloat ="levler-bottom-right showstate ";
+                containerFloat="levler-lg-container-right hide";
             }
             else if(this.state.data.position === "Bottom-Left"){
-                levlerFloat = "levler-bottom-left hide";
-                barFloat ="levler-bottom-left show";
+                levlerFloat = "levler-bottom-left initialstate ";
+                barFloat ="levler-bottom-left showstate";
                 containerFloat="levler-lg-container-left hide";
             }
         }
         var reviewbar="";
         if(this.state.show){
-            reviewbar="levlerbar-open";
+            reviewbar="levler-bottom-bar-body bar-content";
+            xcrossFloat ="levler-bottom-right show"; 
         }
         else{
-            reviewbar="levlerbar-loaded";
-        }
-        var k = <div id="levler-bar-bottom" className= {levlerFloat} style={{overflow:'hidden'}}>
-                   <Fade bottom style={{borderradius:'50%'}}> <div className="levler-bottom-bar-header" style={{"background":this.state.data.hexacode}}>
+            reviewbar="levler-bottom-bar-body";
+            xcrossFloat ="levler-bottom-right hide";  
+        }        
+        var k = 
+                <div id="levler-bar-bottom" className= {levlerFloat}>
+                    <div className="content">
+                   <div className="levler-bottom-bar-header" style={{"background":this.state.data.hexacode}}>
                         <span className="levler-bottom-bar-close"></span>
                         <div className="levler-bar-large-label-name">{ this.state.data.team }</div>
                         <Stars size="12" rating={Number.parseInt(this.state.data.average_rating)} />
                         <div className="levler-bottom-bar-header-content">Content Content Content Content Content Content</div>
                     </div>
-                
+    
                       <div className="levler-bottom-bar-middle">  
                         <span className="levler-bottom-bar-middle-content">Content Content Content</span>
                     </div>
                    
-                    <div className="levler-bottom-bar-body">
-                        <Fade bottom duration={500}><ListItems data={this.state.data} /></Fade>
+                    <div className={reviewbar}>
+                        <ListItems data={this.state.data} />
                       </div>
-                            
                     <div className="levler-bottom-bar-footer-top">
                         <Button className="levler-footer-top-button">
-                           <span> <span className="levler-external-link"><FaExternalLink /></span>New Conversation</span>
+                           <span>
+                               <span className="levler-external-link">
+                                   <FaExternalLink />
+                               </span>New Conversation
+                            </span>
                         </Button>
                     </div>
                    <div className="levler-bottom-bar-footer">
                       <div className="levler-bottom-bar-footer-label">    
                            <i>
                                <a href="http://levler.co/" style={{textDecoration :'none',color:'#777777'}}>
-                                 <Zoom duration={1000}><span> Powered by Levler</span></Zoom>
+                                 <span> Powered by Levler</span>
                               </a>
                            </i>
                         </div>
-                    </div></Fade>
                     </div>
-                    
-        return(  
-            <div className={containerFloat}>
-                <Zoom duration={1000}><div  id="levler-show-reviews-large" className={barFloat} onClick={ this.toggleReviews }>
+                    </div>
+                    </div>
+                 var y = <div  id="levler-show-reviews-large" className={barFloat} onClick={ this.toggleReviews }>
                     <div className="levler-bar-border"  style={{"background":this.state.data.hexacode}}></div>
                         <div className="levler-left-col-small">
                            <img src={'https://app.levler.co/images/search.png'} alt="google" className="levler-google-large"/>
                         </div>
-                         <div className="levler-right-col-small">
-                               <div>
-                                   <span className="levler-left-bar-review-name-small">
-                                     Rating
-                                   </span>
-                               </div>
+                        <div className="levler-right-col-small">
                             <div>
-                           <span className="levler-bar-rating-small">{ this.state.data.average_rating}</span>
-                           <span>
-                               <Stars rating={Number.parseInt(this.state.data.average_rating)} size="13" class="levler-left-bar-star"/>
-                           </span>
-                        </div>
+                                <span className="levler-left-bar-review-name-small">
+                                     Rating
+                                </span>
+                            </div>
+                            <div>
+                                <span className="levler-bar-rating-small">{ this.state.data.average_rating}</span>
+                                <span>
+                                   <Stars rating={Number.parseInt(this.state.data.average_rating)} size="13" class="levler-left-bar-star"/>
+                                </span>
+                            </div>
                 <div className="levler-timestamp-review">{ this.state.data.No_of_reviews } reviews</div>
                 </div>
+                </div>  
+        return(  
+            <div className={containerFloat}>
+                {y}
+                <div onClick={ this.toggleReviews } className={xcrossFloat}>
+                    <div className={this.state.data.position === 'Bottom-Right'? "levler-show-reviews-large-mdclose-right":"levler-show-reviews-large-mdclose-left"} style={{"background":this.state.data.hexacode}}>
+                       <FaClose href='#' />
+                    </div>
                 </div>
-                </Zoom>     
-                 <div onClick={ this.toggleReviews } className={levlerFloat}>
-                     <Zoom duration={1000}><div className={this.state.data.position === 'Bottom-Right'? "levler-show-reviews-large-mdclose-right":"levler-show-reviews-large-mdclose-left"} style={{"background":this.state.data.hexacode}}>
-                    <FaClose href='#' />
-                </div></Zoom>
-                </div>
-                <Zoom duration={1000}>{k}</Zoom>
-                </div>
+                {k}
+            </div>
         );
     }
 }
