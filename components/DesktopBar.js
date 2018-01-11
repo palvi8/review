@@ -248,7 +248,7 @@ class DesktopBar extends Component {
         }        
         var k = 
                 <div id="levler-bar-bottom" className= {levlerFloat}>
-                    <div className="content">
+            
                    <div className="levler-bottom-bar-header" style={{"background":this.state.data.hexacode}}>
                         <span className="levler-bottom-bar-close"></span>
                         <div className="levler-bar-large-label-name">{ this.state.data.team }</div>
@@ -281,7 +281,7 @@ class DesktopBar extends Component {
                            </i>
                         </div>
                     </div>
-                    </div>
+                
                     </div>
                  var y = <div  id="levler-show-reviews-large" className={barFloat} onClick={ this.toggleReviews }>
                     <div className="levler-bar-border"  style={{"background":this.state.data.hexacode}}></div>
