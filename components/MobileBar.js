@@ -193,7 +193,7 @@ class MobileBar extends Component {
         return (
             <div className="levler-sm-container">
                 <div id="levler-bar-small" className={this.state.show ? 'open':'closed'} onClick={ this.toggleReviews } >
-                    <Zoom><div id="levler-show-reviews-small" className={ this.state.show ? 'hide':'show'}>
+                    <div id="levler-show-reviews-small" className={ this.state.show ? 'hide':'show'}>
                         <div className="levler-bar-border" style={{"background":this.state.data.hexacode}}></div>
                         <div className="levler-bar-small-label levler-bar-small-label-rating">
                             <img src={'https://app.levler.co/images/search.png'} alt="google" className="levler-google-small"/>
@@ -204,12 +204,12 @@ class MobileBar extends Component {
                     </div>
                     <div id="levler-hide-reviews-small" className={ this.state.show ? 'show':'hide'} style={{"background":this.state.data.hexacode}}>
                         <FaMinus size={30} id="levler-minus"/>
-                    </div></Zoom>
+                    </div>
                 </div>
                 
                 <div id="levler-bar-left" className={ this.state.show ? 'show':'hide'}>
                     <div className="levler-left-bar-body">
-                        <Zoom duration={2000}><div className="levler-left-bar-header" style={{"background":this.state.data.hexacode}}>
+                        <div className="levler-left-bar-header" style={{"background":this.state.data.hexacode}}>
                            <span className="levler-bottom-bar-close"></span>
                         <div className="levler-bar-large-label-name">{ this.state.data.team }</div>
                         <div>
@@ -217,7 +217,7 @@ class MobileBar extends Component {
                         </div>
                         
                         </div>
-                        </Zoom>      
+                        
 
                         <div className="levler-bottom-bar-body-small">
                             <ListItems data={this.state.data} />

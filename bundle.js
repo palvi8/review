@@ -24988,34 +24988,30 @@ var MobileBar = function (_Component) {
                     'div',
                     { id: 'levler-bar-small', className: this.state.show ? 'open' : 'closed', onClick: this.toggleReviews },
                     _react2.default.createElement(
-                        _reactReveal.Zoom,
-                        null,
+                        'div',
+                        { id: 'levler-show-reviews-small', className: this.state.show ? 'hide' : 'show' },
+                        _react2.default.createElement('div', { className: 'levler-bar-border', style: { "background": this.state.data.hexacode } }),
                         _react2.default.createElement(
                             'div',
-                            { id: 'levler-show-reviews-small', className: this.state.show ? 'hide' : 'show' },
-                            _react2.default.createElement('div', { className: 'levler-bar-border', style: { "background": this.state.data.hexacode } }),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'levler-bar-small-label levler-bar-small-label-rating' },
-                                _react2.default.createElement('img', { src: 'https://app.levler.co/images/search.png', alt: 'google', className: 'levler-google-small' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'levler-bar-small-stars' },
-                                _react2.default.createElement(Stars, { size: '8', rating: Number.parseInt(this.state.data.average_rating) })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'levler-bar-small-reviews' },
-                                this.state.data.No_of_reviews,
-                                ' reviews'
-                            )
+                            { className: 'levler-bar-small-label levler-bar-small-label-rating' },
+                            _react2.default.createElement('img', { src: 'https://app.levler.co/images/search.png', alt: 'google', className: 'levler-google-small' })
                         ),
                         _react2.default.createElement(
                             'div',
-                            { id: 'levler-hide-reviews-small', className: this.state.show ? 'show' : 'hide', style: { "background": this.state.data.hexacode } },
-                            _react2.default.createElement(_minus2.default, { size: 30, id: 'levler-minus' })
+                            { className: 'levler-bar-small-stars' },
+                            _react2.default.createElement(Stars, { size: '8', rating: Number.parseInt(this.state.data.average_rating) })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'levler-bar-small-reviews' },
+                            this.state.data.No_of_reviews,
+                            ' reviews'
                         )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { id: 'levler-hide-reviews-small', className: this.state.show ? 'show' : 'hide', style: { "background": this.state.data.hexacode } },
+                        _react2.default.createElement(_minus2.default, { size: 30, id: 'levler-minus' })
                     )
                 ),
                 _react2.default.createElement(
@@ -25025,22 +25021,18 @@ var MobileBar = function (_Component) {
                         'div',
                         { className: 'levler-left-bar-body' },
                         _react2.default.createElement(
-                            _reactReveal.Zoom,
-                            { duration: 2000 },
+                            'div',
+                            { className: 'levler-left-bar-header', style: { "background": this.state.data.hexacode } },
+                            _react2.default.createElement('span', { className: 'levler-bottom-bar-close' }),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'levler-left-bar-header', style: { "background": this.state.data.hexacode } },
-                                _react2.default.createElement('span', { className: 'levler-bottom-bar-close' }),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'levler-bar-large-label-name' },
-                                    this.state.data.team
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    null,
-                                    _react2.default.createElement(Stars, { size: '12', rating: Number.parseInt(this.state.data.average_rating) })
-                                )
+                                { className: 'levler-bar-large-label-name' },
+                                this.state.data.team
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(Stars, { size: '12', rating: Number.parseInt(this.state.data.average_rating) })
                             )
                         ),
                         _react2.default.createElement(
