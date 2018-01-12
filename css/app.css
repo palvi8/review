@@ -76,9 +76,9 @@ visibility: hidden;
  filter:blur(0.5)5px;
  border-radius:50px;
 transform: translateY(0px);
--webkit-transition: all 0.6s cubic-bezier(0.55, 0.06, 0.68, 0.19);
--moz-transition: all 0.6s cubic-bezier(0.55, 0.06, 0.68, 0.19);
-transition: all 0.6s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+-webkit-transition: all 0.2s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+-moz-transition: all 0.2s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+transition: all 0.2s cubic-bezier(0.55, 0.06, 0.68, 0.19);
 opacity:0.11;
 }
 .bar-content {
