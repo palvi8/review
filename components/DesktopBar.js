@@ -216,24 +216,24 @@ class DesktopBar extends Component {
         var xcrossFloat="";
         if(this.state.show){
             if(this.state.data.position === "Bottom-Right"){
-                levlerFloat = "levler-bottom-right showstate";
-                barFloat ="levler-bottom-right initialstate";
+                levlerFloat = "levler-bottom-right showstate show";
+                barFloat ="levler-bottom-right initialstate hide";
                 containerFloat="levler-lg-container-right show";
             }
             else if(this.state.data.position === "Bottom-Left"){
-                levlerFloat = "levler-bottom-left showstate";
-                barFloat ="levler-bottom-left initialstate ";
+                levlerFloat = "levler-bottom-left showstate show";
+                barFloat ="levler-bottom-left initialstate hide";
                 containerFloat="levler-lg-container-left show";
             }
         } else {
             if(this.state.data.position === "Bottom-Right"){
-                levlerFloat = "levler-bottom-right show initialstate ";
-                barFloat ="levler-bottom-right showstate ";
+                levlerFloat = "levler-bottom-right initialstate hide";
+                barFloat ="levler-bottom-right showstate show";
                 containerFloat="levler-lg-container-right hide";
             }
             else if(this.state.data.position === "Bottom-Left"){
-                levlerFloat = "levler-bottom-left initialstate ";
-                barFloat ="levler-bottom-left showstate";
+                levlerFloat = "levler-bottom-left initialstate hide";
+                barFloat ="levler-bottom-left showstate show";
                 containerFloat="levler-lg-container-left hide";
             }
         }
